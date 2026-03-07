@@ -1,0 +1,3 @@
+so now instead of setting up on your own just start with:
+
+npx create-react-app  name_of_the_project
