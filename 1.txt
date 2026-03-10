@@ -4,3 +4,14 @@ npx create-react-app  name_of_the_project
 
 
 if you need to handle big forms in react there is a library known as formik which helps us to tackle forms in react so remember to checkout this library
+
+while building the forms always remember to validate it and for that we gonna use useref() hook now
+
+for form validation its important to know regex so for that go ahead and read some Regex and memorise it if you can 
+
+basically there are two ways to access the values written inside the form either use state variables or we can provide the reference of input fields thats where useRef comes into the picture
+
+
+basically what happens is that useRef return a whole ass object and in that object we have the value of the input boxes so we need to access them through the object
+
+so the stored value will be current.value so for email it will become email.current.value
