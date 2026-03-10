@@ -1,3 +1,6 @@
 so now instead of setting up on your own just start with:
 
 npx create-react-app  name_of_the_project
+
+
+if you need to handle big forms in react there is a library known as formik which helps us to tackle forms in react so remember to checkout this library
