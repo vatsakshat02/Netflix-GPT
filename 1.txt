@@ -20,4 +20,32 @@ useRef is used to basically create a reference to that element like an input tag
 
 now after form validation we are going to do authentication and for that we need backend and for the backend we are going to use google FireBase
 
-after creating your Project on firebase select the web option for the app then click firebase hosting only if you want to host your app on firebase
+after creating your Project on firebase select the web option for the app then click firebase hosting only if you want to host your app on firebase it will give live url for our app
+
+after deploying now we will setup our authentication for that read the documentation add authentications like import and here you will see one line const auth = getAuth()
+
+Whenever you do an Api call like anything you will always see the line const auth = getAuth() soo what we did was to put this line in firebase.txt so that we dont have to write it everytime and we could just import it 
+
+
+ createUserWithEmailAndPassword(
+        auth,
+        email.current!.value,
+        password.current!.value
+      )
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        });
+
+ see now ill explain what is happening:
+ - first we are calling an Api createUserWithEmailAndPassword and here the value that we are sending is of our input    boxes email and password
+
+ - then we are checking the userCredential and if everything is perfect it will return us an user and if its isnt it will return the errorMessage that is what happening over here
+
+ whenever the user signs in or signup firebase basically creates an access token to us and we use this to register or access the user data 
+
+ after signing in or signing up what we gonna do is basically use that userObject that we get from the fireBase and give it to the redux store so that we can navigate our user from login to the Browse Page [redux store is used where we keep the data that needs to be accessed anywhere in the code it is a very large object and to access the data we need to subscribe to the store using useSelector hook and to update it we have to dispatch an action which will then call the reducer function which will then update our slice ]

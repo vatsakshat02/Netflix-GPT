@@ -1,6 +1,10 @@
 import React, { useState, useRef } from "react";
 import Header from "./Header";
 import { checkValidData } from "../utils/validate";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../utils/firebase";
+import { FirebaseError } from "firebase/app";
+import { signInWithEmailAndPassword } from "firebase/auth";
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -12,11 +16,50 @@ const Login = () => {
   const handleButtonClick = () => {
     //validate the form first
     const message = checkValidData(
-      email.current!.value,
-      password.current!.value,
-      name.current!.value
+      email.current?.value || "",
+      password.current?.value || "",
+      name.current?.value || ""
     );
     setErrorMessage(message);
+    if (message) return; //basically it is saying that if message is not null like there is email not valid then return dont sign in or sign up
+
+    //Sign-in Sign-Up
+    if (!isSignInForm) {
+      //Sign-Up(logic)
+      createUserWithEmailAndPassword(
+        auth,
+        email.current!.value,
+        password.current!.value
+      )
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          console.log("User Created:", user);
+        })
+        .catch((error: FirebaseError) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + "-" + errorMessage);
+        });
+    } else {
+      //Sign-In(logic)
+      signInWithEmailAndPassword(
+        auth,
+        email.current!.value,
+        password.current!.value
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+          // ...
+        })
+        .catch((error: FirebaseError) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setErrorMessage(errorCode + "-" + errorMessage);
+        });
+    }
   };
 
   const toggleSignUpForm = () => {
@@ -67,7 +110,9 @@ const Login = () => {
           {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
         <p className="py-6 cursor-pointer" onClick={toggleSignUpForm}>
-          new to Netflix? Sign Up Now
+          {isSignInForm
+            ? "New to Netflix? Sign Up Now"
+            : "Already registered? Sign In Now"}
         </p>
       </form>
     </div>
