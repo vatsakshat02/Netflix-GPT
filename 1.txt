@@ -15,3 +15,9 @@ basically there are two ways to access the values written inside the form either
 basically what happens is that useRef return a whole ass object and in that object we have the value of the input boxes so we need to access them through the object
 
 so the stored value will be current.value so for email it will become email.current.value
+
+useRef is used to basically create a reference to that element like an input tag or button
+
+now after form validation we are going to do authentication and for that we need backend and for the backend we are going to use google FireBase
+
+after creating your Project on firebase select the web option for the app then click firebase hosting only if you want to host your app on firebase
