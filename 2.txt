@@ -1,3 +1,7 @@
 So we fixed some bugs in our code first one was that whenever we typed basically url to our browser like 'http://localhost:3000/browse' so it was staright up opening our browse page without authentication which is wrong
 
 so what we did we used useEffect and it tells us wether the user is logged in or not by checking the auth state basically our auth state tells us wether the user is logged in or not so when everything renders our useEffect runs and when it runs it checks the authState and according to the AuthState it navigates us thats how we solved this solution
+
+Second issue see the problem is: when our component is there useEffect is being called once but suppose after unmounting what will happen our component wont be there then there is also no point in subscribing to the store so whenever our component will unmount we will unsubscribe to our store    
+
+so for this we have unsubscribe given to us by onAuthStateChanged so after our component unmounts we will basically unsubscribe to the store by calling the unsubscribe function 

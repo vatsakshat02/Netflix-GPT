@@ -15,7 +15,10 @@
 - Implemented Sign out
 - Update Profile
 - Fetch from Movies
-- Fixed bugs :Signup user displayName
+- Bugfix: Signup user displayName
+- Bugfix: if the user is not logged in redirect /browse to Login page and vice-versa
+- Unsubscribed to the onAuthStateChanged callback
+- Add hardcoded values to constants file and then import them
 
 #Features
 
