@@ -49,3 +49,9 @@ Whenever you do an Api call like anything you will always see the line const aut
  whenever the user signs in or signup firebase basically creates an access token to us and we use this to register or access the user data 
 
  after signing in or signing up what we gonna do is basically use that userObject that we get from the fireBase and give it to the redux store so that we can navigate our user from login to the Browse Page [redux store is used where we keep the data that needs to be accessed anywhere in the code it is a very large object and to access the data we need to subscribe to the store using useSelector hook and to update it we have to dispatch an action which will then call the reducer function which will then update our slice ]
+
+ after creating basically our store we need to dispatch an action to update the store so that we can maintain that user state throughout our app so for that basically we use dispatch action but the problem is that i have to write the code for dispatch action two times one for sign in and one for signUp so to tackle this issue fireBase basically provides us with one thing called as change in auth state
+
+ - we are calling Auth everytime that we sign up and sign in so whenever there is change in auth we can dispatch our user info basically
+
+ there is another hook known as useNavigate and it is used to Navigvate to a different page so suppose that after filling up the sign in or sign up form it is used to basically navigate them to the next page which is a landing page
