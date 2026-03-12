@@ -55,3 +55,6 @@ Whenever you do an Api call like anything you will always see the line const aut
  - we are calling Auth everytime that we sign up and sign in so whenever there is change in auth we can dispatch our user info basically
 
  there is another hook known as useNavigate and it is used to Navigvate to a different page so suppose that after filling up the sign in or sign up form it is used to basically navigate them to the next page which is a landing page
+
+
+ now we gonna also use tmdb api and in this api basically we are using it cause it is highly stable it provides proper documentation ands it covers latest Movies for us 

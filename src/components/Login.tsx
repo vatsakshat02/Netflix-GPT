@@ -5,11 +5,10 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { FirebaseError } from "firebase/app";
 import { signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const navigate = useNavigate();
 
   const email = useRef<HTMLInputElement>(null);
   const password = useRef<HTMLInputElement>(null);
@@ -42,7 +41,6 @@ const Login = () => {
             .then(async () => {
               // Profile updated!
               await user.reload();
-              navigate("/browse");
             })
             .catch((error) => {
               // An error occurred
@@ -66,7 +64,7 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
           console.log(user);
-          navigate("/browse");
+
           // ...
         })
         .catch((error: FirebaseError) => {

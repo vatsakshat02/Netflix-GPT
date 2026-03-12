@@ -12,6 +12,10 @@
 - Create Signup in Firebase
 - Implement Sign In user Api
 - Created Redux store with userSlice
+- Implemented Sign out
+- Update Profile
+- Fetch from Movies
+- Fixed bugs :Signup user displayName
 
 #Features
 
