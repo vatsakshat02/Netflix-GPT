@@ -5,3 +5,17 @@ so what we did we used useEffect and it tells us wether the user is logged in or
 Second issue see the problem is: when our component is there useEffect is being called once but suppose after unmounting what will happen our component wont be there then there is also no point in subscribing to the store so whenever our component will unmount we will unsubscribe to our store    
 
 so for this we have unsubscribe given to us by onAuthStateChanged so after our component unmounts we will basically unsubscribe to the store by calling the unsubscribe function 
+
+whenever you will see strings replace them with constants by creating constants file in the utils and then exporting them from there 
+
+A good developer is the one who reads documentation and in tmdb it has a very good documentation and  here you can see what Apis that you can use basically
+
+there are certain options that you have to pass basically whenever you are going to make api calls so its better to create them in the constants folder and then export them to the document that needs it 
+
+basically when we do the Api call it is being called two times and teh reason behind this is React.StrictMode because react does extra rendering to check of inconsistencies in your rendering cycle
+
+(<React.StrictMode> is a development-only tool that helps identify potential problems and outdated practices in a React application by activating extra checks and warnings for its descendant components.)
+
+after making the api call we have created a movieslice and we have dispatch our fetch data to this slice 
+
+since our browser contains too much code we will now create a custom hook for our fetch Api call and for that we will make a separate folder known as hooks

@@ -19,6 +19,8 @@
 - Bugfix: if the user is not logged in redirect /browse to Login page and vice-versa
 - Unsubscribed to the onAuthStateChanged callback
 - Add hardcoded values to constants file and then import them
+- Register for TMDB API and create an app & get access token
+- Get data from TMDB Now Playing API
 
 #Features
 
