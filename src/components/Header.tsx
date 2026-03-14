@@ -44,10 +44,10 @@ const Header = () => {
       <img className="w-44 " src={LOGO} alt="Logo" />
       {user && (
         <div className="flex">
-          <img src={profileIcon} alt="profileIcon" className="w-20 mr-8" />
+          <img src={profileIcon} alt="profileIcon" className="w-16 h-16 mr-8" />
           <button
             onClick={handleSignOut}
-            className="bg-red-600 text-white p-4 m-4 font-bold"
+            className="bg-red-600 text-white p-2 m-2 font-bold"
           >
             Sign Out
           </button>

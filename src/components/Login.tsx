@@ -46,7 +46,6 @@ const Login = () => {
               // An error occurred
               setErrorMessage(error.message);
             });
-          console.log("User Created:", user);
         })
         .catch((error: FirebaseError) => {
           const errorCode = error.code;
@@ -63,7 +62,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
 
           // ...
         })

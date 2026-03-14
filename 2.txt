@@ -19,3 +19,27 @@ basically when we do the Api call it is being called two times and teh reason be
 after making the api call we have created a movieslice and we have dispatch our fetch data to this slice 
 
 since our browser contains too much code we will now create a custom hook for our fetch Api call and for that we will make a separate folder known as hooks
+
+basically we can divide our browse page into two parts first is the main movie part and second is the recommendation part
+
+  const movies = useSelector(
+    (store: RootState) => store.movies?.nowPlayingMovies
+  );
+  if (movies === null) return;
+  const mainMovie = movies[0];
+
+
+  see we wrote a condition that if the movies is null as the initial state before api call is null then return nothing this is also known as early return 
+
+  so yes after that we fixed some typeScript issue and at the last we have used api for the background videos and each movie has an id so we accessed that id and named it movie id and then we passed that movie id to the VideoBackground and then fetched our data from the Api using movie id
+
+  after fetching data we filtered it using .filter to access the object that returns type === trailer and if the movie doesnt have any trailer then we basically used whatever is on the 0th index of our fetched data
+
+  now in the trailer object we have a key so before that you should know every youtube video has a key and in the trailer object that key is present there so we can access them using taht key by adding it at the end of the youtube url link 
+
+  now go to the youtube video get the embed code and paste it after that to make the link dynamic we will concatenate the url with the key basically and how do we achieve that there are two ways
+
+  - First is to use useState hook and pass the key from the api call using setTrailer to variable trailer and access it
+  - Second way is to use redux store create a reducer in Movie Slice dispatch an action accessing that trailer and then use Selector to access the trailer object and pass the key to concatenation 
+
+  we are using the second approach today 
