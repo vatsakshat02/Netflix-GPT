@@ -45,3 +45,5 @@ basically we can divide our browse page into two parts first is the main movie p
   we are using the second approach today 
 
   - After this we just applied some css and made our page more presentable and after this we will create our secondary page 
+
+  - Now we just planned how our second container is gonna look alike and now we will build it so first thing first is that we gonna need data that we can access for that we are going to use useSelector hook and access our MovieSlice
