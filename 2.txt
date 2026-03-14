@@ -43,3 +43,5 @@ basically we can divide our browse page into two parts first is the main movie p
   - Second way is to use redux store create a reducer in Movie Slice dispatch an action accessing that trailer and then use Selector to access the trailer object and pass the key to concatenation 
 
   we are using the second approach today 
+
+  - After this we just applied some css and made our page more presentable and after this we will create our secondary page 
