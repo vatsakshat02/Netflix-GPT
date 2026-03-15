@@ -1,0 +1,18 @@
+in this episode we are basically gonna build our search gpt Feature
+
+- First we created a button in the Header and named it GPT Search 
+- then we created a component for Gpt Search and imported that into our Browse component
+
+Issue that we are facing is that we want to show the gptSearch only when the button is clicked so for that we have created a new slice in our redux store which stores boolean values and according to that we will toggle its values using onClick and we wrote a conditional statement that will decide that if our component should be visible or not    
+
+but during writing of that conditional component we wrote it like this:
+ {gptSearch ? (
+        <GPTSearch />
+      ) : (
+        <>
+          <MainContainer />
+          <SecondaryContainer />
+        </>
+      )}
+
+<></> : this is basically React Fragments which are : React Fragments are a feature that allow you to group multiple elements within a component's render method without adding an extra wrapper node (like a <div>) to the DOM
