@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { FirebaseError } from "firebase/app";
 import { signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { BG_IMG_URL } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -81,10 +82,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/e49aba81-ee7c-4f19-baef-7c54bbab003e/web/IN-en-20260202-TRIFECTA-perspective_04f5de39-b518-493c-9a8d-6aef11af0457_large.jpg"
-          alt="Logo"
-        />
+        <img src={BG_IMG_URL} alt="Logo" />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
