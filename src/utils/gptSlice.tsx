@@ -1,11 +1,24 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { act } from "react";
+
+interface Movie {
+  id: number;
+  title: string;
+  overview: string;
+  poster_path: string;
+  release_date: string;
+}
 
 interface GptState {
   showGptSearch: boolean;
+  movieResults: Movie[][] | null;
+  movieNames: string[] | null;
 }
 
 const initialState: GptState = {
   showGptSearch: false,
+  movieResults: null,
+  movieNames: null,
 };
 
 const gptSlice = createSlice({
@@ -15,9 +28,16 @@ const gptSlice = createSlice({
     toggleGptSearchView: (state) => {
       state.showGptSearch = !state.showGptSearch;
     },
+    addGptMovieResult: (
+      state,
+      action: PayloadAction<{ movieNames: string[]; movieResults: Movie[][] }>
+    ) => {
+      state.movieNames = action.payload.movieNames;
+      state.movieResults = action.payload.movieResults;
+    },
   },
 });
 
-export const { toggleGptSearchView } = gptSlice.actions;
+export const { toggleGptSearchView, addGptMovieResult } = gptSlice.actions;
 
 export default gptSlice.reducer;
