@@ -22,3 +22,5 @@ okay after that we basically built our gpt search we integrated the api key and 
 after fetching the data it is an asynchronus function so basically that means we are just getting promises in return so to resolve that promise we are going to use Promise.all() function basically 
 
 after that we fetch all of this data to our react redux store where we store it under the gpt slice and now we will access these value in our gptMovieSuggestion component
+
+now we are going to make it responsive

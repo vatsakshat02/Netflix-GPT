@@ -36,6 +36,15 @@
 - Made the browse page amazing using tailwind css
 - custom hook for popular Movies
 - Gpt search feature
+- Gpt Search Bar
+- Get Open API key
+- Gpt Search API call
+- Fetched Gpt movie suggestion from TMDB
+- Created gpt slice added data
+- Reused MovieList component to make movie suggestion container
+- Memoization
+- Adding env file to gitignore
+- Made our site Responsive
 
 #Features
 

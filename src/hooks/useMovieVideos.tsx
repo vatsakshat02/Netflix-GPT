@@ -4,6 +4,9 @@ import { addTrailer } from "../utils/movieSlice";
 import { RootState } from "../utils/appStore";
 import { API_OPTIONS } from "../utils/constants";
 const useMovieVideos = (movieId: number) => {
+  const trailerVideo = useSelector(
+    (store: RootState) => store.movies.trailerVideo
+  );
   const dispatch = useDispatch();
   const getMovieVideos = async () => {
     const data = await fetch(
@@ -22,7 +25,7 @@ const useMovieVideos = (movieId: number) => {
   };
 
   useEffect(() => {
-    getMovieVideos();
+    if (!trailerVideo) getMovieVideos();
   }, []);
 };
 export default useMovieVideos;
