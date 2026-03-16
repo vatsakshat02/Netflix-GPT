@@ -7,7 +7,6 @@ interface movieListProps {
   movies: Movie[] | null;
 }
 const MovieList = ({ title, movies }: movieListProps) => {
-  console.log(movies);
   if (!movies) return null;
   return (
     <div className="px-6 ">
