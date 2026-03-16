@@ -20,3 +20,5 @@ but during writing of that conditional component we wrote it like this:
 okay after that we basically built our gpt search we integrated the api key and took the pre requisite to send the prompt to the backend and then fetch our result into an array by making them split by comma and storing those values in gptMovie now the thing is after getting values we will call another tmdb Api to match these movies name with its data and get access of there poster and display them
 
 after fetching the data it is an asynchronus function so basically that means we are just getting promises in return so to resolve that promise we are going to use Promise.all() function basically 
+
+after that we fetch all of this data to our react redux store where we store it under the gpt slice and now we will access these value in our gptMovieSuggestion component

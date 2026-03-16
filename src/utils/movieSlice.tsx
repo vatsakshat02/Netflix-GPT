@@ -1,11 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-export interface Movie {
-  id: number;
-  original_title: string;
-  overview: string;
-  poster_path: string;
-}
+import { Movie } from "../types/movie";
 
 export interface Trailer {
   id: string;

@@ -1,13 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { act } from "react";
 
-interface Movie {
-  id: number;
-  title: string;
-  overview: string;
-  poster_path: string;
-  release_date: string;
-}
+import { Movie } from "../types/movie";
 
 interface GptState {
   showGptSearch: boolean;
