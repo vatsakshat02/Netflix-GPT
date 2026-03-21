@@ -1,6 +1,6 @@
 import React from "react";
 import { IMG_CDN_URL } from "../utils/constants";
-import { Movie } from "../types/movie";
+
 interface MovieCardProps {
   posterPath: string;
 }

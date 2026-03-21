@@ -1,4 +1,4 @@
-import { UseSelector, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "../utils/appStore";
 import VideoBackground from "./VideoBackground";
 import VideoTitle from "./VideoTitle";

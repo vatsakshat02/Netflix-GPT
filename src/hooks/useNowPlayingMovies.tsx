@@ -1,6 +1,6 @@
 import { API_OPTIONS } from "../utils/constants";
 import { useEffect } from "react";
-import { UseDispatch, useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addnowPlayingMovies } from "../utils/movieSlice";
 import { RootState } from "../utils/appStore";
 
